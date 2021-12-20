@@ -82,6 +82,7 @@ highlight FoldColumn ctermfg=0
 
 inoremap jk <Esc>
 inoremap kj <Esc>
+inoremap ii <Esc>
 
 let g:neovide_cursor_vfx_mode = "sonicboom"
 let g:neovide_fullscreen=v:true
@@ -155,6 +156,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+  --formatter
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]

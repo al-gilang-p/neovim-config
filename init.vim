@@ -78,6 +78,7 @@ set completeopt=menu,menuone,noselect
 set mouse=a
 set hidden
 set foldcolumn=2
+set cursorline
 highlight FoldColumn ctermbg=0
 highlight FoldColumn ctermfg=0
 
@@ -88,7 +89,7 @@ inoremap ii <Esc>
 let g:blade_custom_directives = ['css', 'javascript']
 
 let g:neovide_cursor_vfx_mode = "sonicboom"
-let g:neovide_transparency=0.8
+let g:neovide_transparency=0.9
 
 colorscheme tokyonight
 

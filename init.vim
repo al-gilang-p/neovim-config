@@ -57,6 +57,7 @@ Plug 'nvim-lua/popup.nvim'
 
 "highlighter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'jwalton512/vim-blade'
 
 "toggleterm
 Plug 'akinsho/toggleterm.nvim'
@@ -84,19 +85,20 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 inoremap ii <Esc>
 
+let g:blade_custom_directives = ['css', 'javascript']
+
 let g:neovide_cursor_vfx_mode = "sonicboom"
-let g:neovide_fullscreen=v:true
+let g:neovide_transparency=0.8
 
 colorscheme tokyonight
 
 let g:mapleader = " "
 let g:dashboard_default_executive ='telescope'
 
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
+let g:nvim_tree_git_hl = 1
 
 let g:toggleterm_terminal_mapping = '<C-t>'
+
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
@@ -121,6 +123,15 @@ nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+function Neovide_fullscreen()
+    if g:neovide_fullscreen == v:true
+        let g:neovide_fullscreen=v:false
+    else
+        let g:neovide_fullscreen=v:true
+    endif
+endfunction
+map <F11> :call Neovide_fullscreen()<cr>
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
@@ -157,12 +168,12 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   --formatter
-  if client.resolved_capabilities.document_formatting then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  --if client.resolved_capabilities.document_formatting then
+    --vim.api.nvim_command [[augroup Format]]
+    --vim.api.nvim_command [[autocmd! * <buffer>]]
+    --vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    --vim.api.nvim_command [[augroup END]]
+  --end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -170,7 +181,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'html', 'intelephense' }
+local servers = { 'html', 'intelephense', 'tsserver' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -357,7 +368,7 @@ require'nvim-tree'.setup {
   auto_close = true,
   --lsp_diagnostics = true,
   ignore_ft_on_setup  = { 'dashboard' },
-  diagnostic = {
+  diagnostics = {
     enable = true
   }
 }

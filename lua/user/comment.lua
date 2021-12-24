@@ -1,9 +1,9 @@
 local status_ok, comment = pcall(require, "Comment")
-if not status_ok then
+ if not status_ok then
   return
 end
 
-comment.setup {
+comment.setup { 
   pre_hook = function(ctx)
     local U = require "Comment.utils"
 
@@ -18,5 +18,5 @@ comment.setup {
       key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
       location = location,
     }
-  end
+  end,
 }

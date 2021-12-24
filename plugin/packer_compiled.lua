@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["hop.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\impatient.nvim",
@@ -153,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["nlsp-settings.nvim"] = {
     loaded = true,
@@ -183,6 +193,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-scrollview"] = {
+    loaded = true,
+    path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-scrollview",
+    url = "https://github.com/dstein64/nvim-scrollview"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -223,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["surround.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\surround.nvim",
+    url = "https://github.com/blackCauldron7/surround.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

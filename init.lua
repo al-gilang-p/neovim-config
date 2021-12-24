@@ -19,3 +19,7 @@ require "user.indentline"
 require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
+-- Personal Addition
+require "user.hop"
+require "user.neoscroll"
+require "user.surround"

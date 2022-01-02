@@ -63,6 +63,7 @@ return packer.startup(function(use)
   use "karb94/neoscroll.nvim" 
   use "blackCauldron7/surround.nvim"
   use "dstein64/nvim-scrollview"
+  use "p00f/nvim-ts-rainbow"
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

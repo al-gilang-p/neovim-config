@@ -37,9 +37,9 @@ local function footer()
 	return "chrisatmachine.com"
 end
 
-dashboard.section.footer.val = footer()
+-- dashboard.section.footer.val = footer()
 
-dashboard.section.footer.opts.hl = "Type"
+-- dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
 

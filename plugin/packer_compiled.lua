@@ -184,6 +184,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-gps"] = {
+    loaded = true,
+    path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-gps",
+    url = "https://github.com/SmiteshP/nvim-gps"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "C:\\Users\\algil\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lsp-installer",
